@@ -54,7 +54,7 @@ theme.dark:
 plugin.background_color.layout_builder_form:
   css:
     theme:
-      css/plugins/background_color/layout-builder-form.css: { }
+#      css/plugins/background_color/layout-builder-form.css: { }
       css/plugins/background_color/bs-classes.css: { }
   js:
     js/plugins/background_color/layout-builder-form.js: { }
@@ -65,10 +65,10 @@ plugin.background_color.build:
       css/plugins/background_color/bs-classes.css: { }
 
 # background_media
-plugin.background_media.layout_builder_form:
-  css:
-    theme:
-      css/plugins/background_media/layout-builder-form.css: { }
+#plugin.background_media.layout_builder_form:
+#  css:
+#    theme:
+#      css/plugins/background_media/layout-builder-form.css: { }
 
 plugin.background_media.build:
   css:
@@ -103,7 +103,7 @@ plugin.margin.build:
 plugin.border.layout_builder_form:
   css:
     theme:
-      css/plugins/border/layout-builder-form.css: { }
+#      css/plugins/border/layout-builder-form.css: { }
       css/plugins/border/bs-classes.css: { }
 
 plugin.border.build:
@@ -113,10 +113,10 @@ plugin.border.build:
 
 
 # scroll_effects
-plugin.scroll_effects.layout_builder_form:
-  css:
-    theme:
-     css/plugins/scroll_effects/layout-builder-form.css: { }
+#plugin.scroll_effects.layout_builder_form:
+#  css:
+#    theme:
+#     css/plugins/scroll_effects/layout-builder-form.css: { }
 
 plugin.scroll_effects.build:
   remote: https://michalsnik.github.io/aos

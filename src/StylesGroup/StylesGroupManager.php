@@ -185,9 +185,9 @@ class StylesGroupManager extends DefaultPluginManager {
           // media_library_form_element module is missing some form featues.
           // like assign attributes or add attachments, here's a workaround.
           // to handle this special case and attach media library.
-          if ($style_key == 'background_media') {
-            $form['#attached']['library'][] = 'bootstrap_styles/plugin.background_media.layout_builder_form';
-          }
+//          if ($style_key == 'background_media') {
+//            $form['#attached']['library'][] = 'bootstrap_styles/plugin.background_media.layout_builder_form';
+//          }
         }
       }
     }

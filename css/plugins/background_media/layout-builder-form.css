@@ -233,8 +233,8 @@
   margin: 0;
 }
 
-#drupal-off-canvas .bs_background--position .form-radios,
-#layout-builder-modal .bs_background--position .form-radios {
+#drupal-off-canvas .bs_background--position .fieldset-wrapper > div,
+#layout-builder-modal .bs_background--position .fieldset-wrapper > div {
   border: 2px solid #ffffff;
   margin: 5px;
   height: 100px;
@@ -242,13 +242,13 @@
   position: relative;
 }
 
-#drupal-off-canvas .bs_background--position .form-radios > div,
-#layout-builder-modal .bs_background--position .form-radios > div {
+#drupal-off-canvas .bs_background--position .fieldset-wrapper > div > div,
+#layout-builder-modal .bs_background--position .fieldset-wrapper > div > div {
   margin: 0;
 }
 
-#drupal-off-canvas .bs_background--position .form-radios input,
-#layout-builder-modal .bs_background--position .form-radios input {
+#drupal-off-canvas .bs_background--position .fieldset-wrapper > div input,
+#layout-builder-modal .bs_background--position .fieldset-wrapper > div input {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -260,18 +260,18 @@
   border: 0;
 }
 
-#drupal-off-canvas .bs_background--position .form-radios input:checked + label,
-#drupal-off-canvas .bs_background--position .form-radios input:checked + label:hover,
-#layout-builder-modal .bs_background--position .form-radios input:checked + label,
-#layout-builder-modal .bs_background--position .form-radios input:checked + label:hover {
+#drupal-off-canvas .bs_background--position .fieldset-wrapper > div input:checked + label,
+#drupal-off-canvas .bs_background--position .fieldset-wrapper > div input:checked + label:hover,
+#layout-builder-modal .bs_background--position .fieldset-wrapper > div input:checked + label,
+#layout-builder-modal .bs_background--position .fieldset-wrapper > div input:checked + label:hover {
   background-color: #41A5FF;
   transform: scale(1.3);
   border: 1px solid #ffffff;
   box-shadow: inset 0 0 0 2px #383A40;
 }
 
-#drupal-off-canvas .bs_background--position .form-radios input ~ label,
-#layout-builder-modal .bs_background--position .form-radios input ~ label {
+#drupal-off-canvas .bs_background--position .fieldset-wrapper > div input ~ label,
+#layout-builder-modal .bs_background--position .fieldset-wrapper > div input ~ label {
   position: absolute;
   background-color: #ffffff;
   border: 2px solid #383A40;
@@ -284,62 +284,62 @@
   transition-duration: 0.5s;
 }
 
-#drupal-off-canvas .bs_background--position .form-radios input ~ label:hover,
-#layout-builder-modal .bs_background--position .form-radios input ~ label:hover {
+#drupal-off-canvas .bs_background--position .fieldset-wrapper > div input ~ label:hover,
+#layout-builder-modal .bs_background--position .fieldset-wrapper > div input ~ label:hover {
   background-color: #ffffff;
   animation: hover-pop 0.3s linear 1;
 }
 
-#drupal-off-canvas .bs_background--position .form-radios input[value='left top'] ~ label,
-#layout-builder-modal .bs_background--position .form-radios input[value='left top'] ~ label {
+#drupal-off-canvas .bs_background--position .fieldset-wrapper > div input[value='left top'] ~ label,
+#layout-builder-modal .bs_background--position .fieldset-wrapper > div input[value='left top'] ~ label {
   left: calc(-16px / 2);
   top: calc(-16px /2);
 }
 
-#drupal-off-canvas .bs_background--position .form-radios input[value='left center'] ~ label,
-#layout-builder-modal .bs_background--position .form-radios input[value='left center'] ~ label {
+#drupal-off-canvas .bs_background--position .fieldset-wrapper > div input[value='left center'] ~ label,
+#layout-builder-modal .bs_background--position .fieldset-wrapper > div input[value='left center'] ~ label {
   left: calc(-16px / 2);
   top: calc(50% - calc(16px / 2));
 }
 
-#drupal-off-canvas .bs_background--position .form-radios input[value='left bottom'] ~ label,
-#layout-builder-modal .bs_background--position .form-radios input[value='left bottom'] ~ label {
+#drupal-off-canvas .bs_background--position .fieldset-wrapper > div input[value='left bottom'] ~ label,
+#layout-builder-modal .bs_background--position .fieldset-wrapper > div input[value='left bottom'] ~ label {
   left: calc(-16px / 2);
   bottom: calc(-16px / 2);
 }
 
-#drupal-off-canvas .bs_background--position .form-radios input[value='center top'] ~ label,
-#layout-builder-modal .bs_background--position .form-radios input[value='center top'] ~ label {
+#drupal-off-canvas .bs_background--position .fieldset-wrapper > div input[value='center top'] ~ label,
+#layout-builder-modal .bs_background--position .fieldset-wrapper > div input[value='center top'] ~ label {
   left: calc(50% - calc(16px / 2));
   top: calc(-16px / 2);
 }
 
-#drupal-off-canvas .bs_background--position .form-radios input[value='center'] ~ label,
-#layout-builder-modal .bs_background--position .form-radios input[value='center'] ~ label {
+#drupal-off-canvas .bs_background--position .fieldset-wrapper > div input[value='center'] ~ label,
+#layout-builder-modal .bs_background--position .fieldset-wrapper > div input[value='center'] ~ label {
   left: calc(50% - calc(16px / 2));
   top: calc(50% - calc(16px / 2));
 }
 
-#drupal-off-canvas .bs_background--position .form-radios input[value='center bottom'] ~ label,
-#layout-builder-modal .bs_background--position .form-radios input[value='center bottom'] ~ label {
+#drupal-off-canvas .bs_background--position .fieldset-wrapper > div input[value='center bottom'] ~ label,
+#layout-builder-modal .bs_background--position .fieldset-wrapper > div input[value='center bottom'] ~ label {
   left: calc(50% - calc(16px / 2));
   bottom: calc(-16px / 2);
 }
 
-#drupal-off-canvas .bs_background--position .form-radios input[value='right top'] ~ label,
-#layout-builder-modal .bs_background--position .form-radios input[value='right top'] ~ label {
+#drupal-off-canvas .bs_background--position .fieldset-wrapper > div input[value='right top'] ~ label,
+#layout-builder-modal .bs_background--position .fieldset-wrapper > div input[value='right top'] ~ label {
   right: calc(-16px / 2);
   top: calc(-16px / 2);
 }
 
-#drupal-off-canvas .bs_background--position .form-radios input[value='right center'] ~ label,
-#layout-builder-modal .bs_background--position .form-radios input[value='right center'] ~ label {
+#drupal-off-canvas .bs_background--position .fieldset-wrapper > div input[value='right center'] ~ label,
+#layout-builder-modal .bs_background--position .fieldset-wrapper > div input[value='right center'] ~ label {
   right: calc(-16px / 2);
   top: calc(50% - calc(16px / 2));
 }
 
-#drupal-off-canvas .bs_background--position .form-radios input[value='right bottom'] ~ label,
-#layout-builder-modal .bs_background--position .form-radios input[value='right bottom'] ~ label {
+#drupal-off-canvas .bs_background--position .fieldset-wrapper > div input[value='right bottom'] ~ label,
+#layout-builder-modal .bs_background--position .fieldset-wrapper > div input[value='right bottom'] ~ label {
   right: calc(-16px / 2);
   bottom: calc(-16px / 2);
 }

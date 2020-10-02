@@ -98,7 +98,7 @@ class ScrollEffects extends StylePluginBase {
     ];
 
     // Attach the Layout Builder from style for this plugin.
-    $form['#attached']['library'][] = 'bootstrap_styles/plugin.scroll_effects.layout_builder_form';
+//    $form['#attached']['library'][] = 'bootstrap_styles/plugin.scroll_effects.layout_builder_form';
 
     return $form;
   }
