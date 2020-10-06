@@ -13,8 +13,6 @@ offcanvas-font:
   version: 1.x
   css:
     theme:
-      //fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap: { type: external, minified: true }
-      //fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap: { type: external, minified: true }
       //fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap: { type: external, minified: true }
       css/fonts.css: { }
 
@@ -54,7 +52,6 @@ theme.dark:
 plugin.background_color.layout_builder_form:
   css:
     theme:
-#      css/plugins/background_color/layout-builder-form.css: { }
       css/plugins/background_color/bs-classes.css: { }
   js:
     js/plugins/background_color/layout-builder-form.js: { }
@@ -65,11 +62,6 @@ plugin.background_color.build:
       css/plugins/background_color/bs-classes.css: { }
 
 # background_media
-#plugin.background_media.layout_builder_form:
-#  css:
-#    theme:
-#      css/plugins/background_media/layout-builder-form.css: { }
-
 plugin.background_media.build:
   css:
     theme:
@@ -103,7 +95,6 @@ plugin.margin.build:
 plugin.border.layout_builder_form:
   css:
     theme:
-#      css/plugins/border/layout-builder-form.css: { }
       css/plugins/border/bs-classes.css: { }
 
 plugin.border.build:
@@ -111,13 +102,7 @@ plugin.border.build:
     theme:
       css/plugins/border/bs-classes.css: { }
 
-
-# scroll_effects
-#plugin.scroll_effects.layout_builder_form:
-#  css:
-#    theme:
-#     css/plugins/scroll_effects/layout-builder-form.css: { }
-
+# scroll effects
 plugin.scroll_effects.build:
   remote: https://michalsnik.github.io/aos
   version: 1.x
