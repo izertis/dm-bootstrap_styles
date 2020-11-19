@@ -425,9 +425,7 @@
   background-size: 25px;
   background-position: right 10px center;
   background-repeat: no-repeat;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
+  appearance: none !important;
 }
 
 #layout-builder-modal .form-select option {
@@ -1510,9 +1508,7 @@
   background-size: 25px;
   background-position: right 10px center;
   background-repeat: no-repeat;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  appearance: none;
+  appearance: none !important;
 }
 
 #drupal-off-canvas .form-select option {
