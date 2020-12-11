@@ -2878,13 +2878,15 @@
   text-align: center;
   width: 75px;
   transform: translateY(-10px);
-  transition: all .25s ease-out;
+  transition: all .25s ease-in-out;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
   border-radius: 4px;
   white-space: normal;
   z-index: 1;
   font-size: .875rem;
   font-weight: normal;
+  will-change: opacity;
+  pointer-events: none;
 }
 
 #drupal-off-canvas .bs_tooltip.bs_tooltip-lg,
@@ -2933,6 +2935,22 @@
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0px);
+}
+
+#drupal-off-canvas .bs_full-label > .form-item > label,
+#layout-builder-modal .bs_full-label > .form-item > label {
+  display: block;
+}
+
+#drupal-off-canvas .bs_full-label > .form-item > label .bs_tooltip-lg,
+#layout-builder-modal .bs_full-label > .form-item > label .bs_tooltip-lg {
+  width: 100%;
+  margin-left: -50%;
+}
+
+#drupal-off-canvas .bs_full-label > .form-item > label .bs_tooltip-lg:after,
+#layout-builder-modal .bs_full-label > .form-item > label .bs_tooltip-lg:after {
+  left: 2rem;
 }
 
 #drupal-off-canvas .media-library-item,
