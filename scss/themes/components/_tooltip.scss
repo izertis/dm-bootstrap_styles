@@ -16,13 +16,15 @@
   text-align: center;
   width: 75px;
   transform: translateY(-10px);
-  transition: all .25s ease-out;
+  transition: all .25s ease-in-out;
   box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
   border-radius: $border_radius / 2;
   white-space: normal;
   z-index: 1;
   font-size: .875rem;
   font-weight: normal;
+  will-change: opacity;
+  pointer-events: none;
 
   &.bs_tooltip-lg {
     width: 150px;
@@ -65,5 +67,20 @@ label {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0px);
+  }
+}
+
+// Fullwidth tooltips
+.bs_full-label > .form-item > label {
+  display: block;
+
+  // Full-width tooltips
+  .bs_tooltip-lg {
+    width: 100%;
+    margin-left: -50%;
+
+    &:after {
+      left: 2rem;
+    }
   }
 }
