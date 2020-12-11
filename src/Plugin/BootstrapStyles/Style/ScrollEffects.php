@@ -32,7 +32,7 @@ class ScrollEffects extends StylePluginBase {
       '#title' => $this->t('How should we load the animation library?'),
       '#required' => TRUE,
       '#options' => [
-        'local' => $this->t('Do nothing, my theme handle it'),
+        'local' => $this->t('Do nothing, let my theme handle it'),
         'external' => $this->t('Add the library for me please'),
       ],
       '#description' => $this->t('<p>Default uses the AOS library: <a href="https://michalsnik.github.io/aos" target="_blank">https://michalsnik.github.io/aos</a><br/> You can override the animation library in your theme by using <br /><code>libraries-override:<br />&nbsp;&nbsp;bootstrap_styles/plugin.scroll_effects.build: your_theme/your_new_library_definition</code><br /><small>For more information, please check: <a href="https://www.drupal.org/node/2497313" target="_blank">https://www.drupal.org/node/2497313</a></small></p>'),
@@ -86,6 +86,130 @@ class ScrollEffects extends StylePluginBase {
    * {@inheritdoc}
    */
   public function buildStyleFormElements(array &$form, FormStateInterface $form_state, $storage) {
+    $data_key = $this->config()->get('scroll_effects_data_key');
+
+    if(isset($data_key)) {
+      if($data_key === 'data-aos') {
+        $form['advanced'] = [
+          '#type' => 'details',
+          '#title' => $this->t('Advanced Options'),
+          '#open' => TRUE,
+        ];
+
+        $form['advanced']['options']  = [
+          '#type' => 'container',
+          '#attributes' => [
+            'class' => ['bs_row'],
+          ],
+        ];
+
+        // Anchor placements.
+        $form['advanced']['options']['anchor_placements'] = [
+          '#type' => 'select',
+          '#title' => $this->t('Anchor Placement') . ' <span class="bs-icon bs-icon--more-info"></span><div class="bs_tooltip bs_tooltip-lg" data-placement="top" role="tooltip">' . $this->t('Defines which position of the element regarding to window should trigger the animation.') . '</div>',
+          '#options' => [
+            'top-bottom' => $this->t('Top Bottom'),
+            'top-center' => $this->t('Top Center'),
+            'top-top' => $this->t('Top Top'),
+            'center-bottom' => $this->t('Center Bottom'),
+            'center-center' => $this->t('Center Center'),
+            'center-top' => $this->t('Center Top'),
+            'bottom-bottom' => $this->t('Bottom Bottom'),
+            'bottom-center' => $this->t('Bottom Center'),
+            'bottom-top' => $this->t('Bottom Top'),
+          ],
+          '#default_value' => $storage['scroll_effects']['anchor_placements'] ?? NULL,
+          '#prefix' => '<div class="bs_col bs_col--100">',
+          '#suffix' => '</div>',
+        ];
+
+        // Easing functions.
+        $form['advanced']['options']['easing_functions'] = [
+          '#type' => 'select',
+          '#title' => $this->t('Easing Type') . ' <span class="bs-icon bs-icon--more-info"></span><div class="bs_tooltip bs_tooltip-lg" data-placement="top" role="tooltip">' . $this->t('Default easing for AOS animations.') . '</div>',
+          '#options' => [
+            'linear' => $this->t('Linear'),
+            'ease' => $this->t('Ease'),
+            'ease-in' => $this->t('Ease In'),
+            'ease-out' => $this->t('Ease Out'),
+            'ease-in-back' => $this->t('Ease In Back'),
+            'ease-out-back' => $this->t('Ease Out Back'),
+            'ease-in-out-back' => $this->t('Ease In Out Back'),
+            'ease-in-sine' => $this->t('Ease In Sine'),
+            'ease-out-sine' => $this->t('Ease Out Sine'),
+            'ease-in-out-sine' => $this->t('Ease In Out Sine'),
+            'ease-in-quad' => $this->t('Ease In Quad'),
+            'ease-out-quad' => $this->t('Ease Out Quad'),
+            'ease-in-out-quad' => $this->t('Ease In Out Quad'),
+            'ease-in-cubic' => $this->t('Ease In Cubic'),
+            'ease-out-cubic' => $this->t('Ease Out Cubic'),
+            'ease-in-out-cubic' => $this->t('Ease In Out Cubic'),
+            'ease-in-quart' => $this->t('Ease in Quart'),
+            'ease-out-quart' => $this->t('Ease Out Quart'),
+            'ease-in-out-quart' => $this->t('Ease In Out Quart'),
+          ],
+          '#default_value' => $storage['scroll_effects']['easing_functions'] ?? 'ease',
+          '#prefix' => '<div class="bs_col bs_col--100">',
+          '#suffix' => '</div>',
+        ];
+
+        // Offset
+        $form['advanced']['options']['offset'] = [
+          '#type' => 'number',
+          '#title' => $this->t('Offset (px)') . ' <span class="bs-icon bs-icon--more-info"></span><div class="bs_tooltip bs_tooltip-lg" data-placement="top" role="tooltip">' . $this->t('Offset (in px) from the original trigger point.') . '</div>',
+          '#default_value' => $storage['scroll_effects']['offset'] ?? 0,
+          '#placeholder' => 0,
+          '#prefix' => '<div class="bs_col bs_col--100">',
+          '#suffix' => '</div>',
+        ];
+
+        // Duration
+        $form['advanced']['options']['duration'] = [
+          '#type' => 'number',
+          '#title' => $this->t('Duration') . ' <span class="bs-icon bs-icon--more-info"></span><div class="bs_tooltip bs_tooltip-lg" data-placement="top" role="tooltip">' . $this->t('Values from 0 to 3000, with step 50ms. Default: 400') . '</div>',
+          '#default_value' => $storage['scroll_effects']['duration'] ?? 400,
+          '#placeholder' => 400,
+          '#min' => 0,
+          '#max' => 3000,
+          '#step' => 50,
+          '#prefix' => '<div class="bs_col bs_col--50">',
+          '#suffix' => '</div>',
+        ];
+
+        // Delay
+        $form['advanced']['options']['delay'] = [
+          '#type' => 'number',
+          '#title' => $this->t('Delay') . ' <span class="bs-icon bs-icon--more-info"></span><div class="bs_tooltip bs_tooltip-lg" data-placement="top" role="tooltip">' . $this->t('Values from 0 to 3000, with step 50ms. Default: 0') . '</div>',
+          '#default_value' => $storage['scroll_effects']['delay'] ?? 0,
+          '#placeholder' => 0,
+          '#min' => 0,
+          '#max' => 3000,
+          '#step' => 50,
+          '#prefix' => '<div class="bs_col bs_col--50">',
+          '#suffix' => '</div>',
+        ];
+
+        // AOS Mirror Option
+        $form['advanced']['options']['mirror'] = [
+          '#type' => 'checkbox',
+          '#title' => $this->t('Mirror') . '<div class="bs_tooltip bs_tooltip-lg" data-placement="top" role="tooltip">' . $this->t('Whether elements should animate out while scrolling past them.') . '</div>',
+          '#default_value' => $storage['scroll_effects']['mirror'] ?? NULL,
+          '#prefix' => '<div class="bs_col bs_col--50">',
+          '#suffix' => '</div>',
+        ];
+
+        // AOS Once
+        $form['advanced']['options']['once'] = [
+          '#type' => 'checkbox',
+          '#title' => $this->t('Once') . '<div class="bs_tooltip bs_tooltip-lg" data-placement="top" role="tooltip">' . $this->t('Whether animation should happen only once - while scrolling down.') . '</div>',
+          '#default_value' => $storage['scroll_effects']['mirror'] ?? NULL,
+          '#prefix' => '<div class="bs_col bs_col--50">',
+          '#suffix' => '</div>',
+        ];
+
+      }
+    }
+
     $form['scroll_effects'] = [
       '#type' => 'radios',
       '#options' => $this->getStyleOptions('scroll_effects'),
@@ -98,7 +222,7 @@ class ScrollEffects extends StylePluginBase {
       '#prefix' => '<span class="input-icon"></span>',
     ];
 
-    // Add icons to the effets.
+    // Add icons to the effects.
     foreach ($form['scroll_effects']['#options'] as $key => $value) {
       $form['scroll_effects']['#options'][$key] = '<span class="input-icon ' . $key . '"></span>' . $value;
     }
@@ -113,6 +237,10 @@ class ScrollEffects extends StylePluginBase {
     return [
       'scroll_effects' => [
         'class' => $group_elements['scroll_effects'],
+        'anchor_placements' => $group_elements['scroll_effects']['anchor_placements'],
+        'easing_functions' => $group_elements['scroll_effects']['easing_functions'],
+        'mirror' => $group_elements['scroll_effects']['mirror'],
+        'once' => $group_elements['scroll_effects']['once'],
       ],
     ];
   }
