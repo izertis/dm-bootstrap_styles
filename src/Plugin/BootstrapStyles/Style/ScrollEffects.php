@@ -106,7 +106,7 @@ class ScrollEffects extends StylePluginBase {
         // Anchor placements.
         $form['advanced']['options']['anchor_placements'] = [
           '#type' => 'select',
-          '#title' => $this->t('Anchor Placement') . ' <span class="bs-icon bs-icon--more-info"></span><div class="bs_tooltip bs_tooltip-lg" data-placement="top" role="tooltip">' . $this->t('Defines which position of the element regarding to window should trigger the animation.') . '</div>',
+          '#title' => $this->t('Anchor Placement') . ' <span class="bs-icon bs-icon--more-info"></span><div class="bs_tooltip bs_tooltip-lg" data-placement="top" role="tooltip">' . $this->t('Defines which position of the element (relative to the window), should trigger the animation.') . '</div>',
           '#options' => [
             'top-bottom' => $this->t('Top Bottom'),
             'top-center' => $this->t('Top Center'),
@@ -119,7 +119,7 @@ class ScrollEffects extends StylePluginBase {
             'bottom-top' => $this->t('Bottom Top'),
           ],
           '#default_value' => $storage['scroll_effects']['anchor_placements'] ?? NULL,
-          '#prefix' => '<div class="bs_col bs_col--100">',
+          '#prefix' => '<div class="bs_col bs_col--100 bs_full-label">',
           '#suffix' => '</div>',
         ];
 
