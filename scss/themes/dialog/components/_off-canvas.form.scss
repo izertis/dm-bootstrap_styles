@@ -60,6 +60,12 @@ label {
   -webkit-appearance: none !important;
   appearance: none  !important;
 
+  &:not([multiple]) {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
   option {
     color: $black;
   }
