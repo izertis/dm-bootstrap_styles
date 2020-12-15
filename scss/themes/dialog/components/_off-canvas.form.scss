@@ -136,6 +136,8 @@ label {
 
 // IEF Entity Table
 .ief-entity-table {
+  width: 100%;
+
   tr:hover td {
     background-color: rgba($panel_text_color, .035);
   }
