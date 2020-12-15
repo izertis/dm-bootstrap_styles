@@ -525,6 +525,10 @@
   float: left;
 }
 
+#layout-builder-modal .ief-entity-table {
+  width: 100%;
+}
+
 #layout-builder-modal .ief-entity-table tr:hover td {
   background-color: rgba(255, 255, 255, 0.035);
 }
@@ -1612,6 +1616,10 @@
 
 #drupal-off-canvas .ief-form > legend {
   float: left;
+}
+
+#drupal-off-canvas .ief-entity-table {
+  width: 100%;
 }
 
 #drupal-off-canvas .ief-entity-table tr:hover td {
