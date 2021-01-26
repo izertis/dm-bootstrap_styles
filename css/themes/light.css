@@ -434,6 +434,12 @@
   appearance: none;
 }
 
+#layout-builder-modal .form-select:not([multiple]) {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 #layout-builder-modal .form-select option {
   color: #000000;
 }
@@ -1406,6 +1412,12 @@
   background-position: right 10px center;
   background-repeat: no-repeat;
   appearance: none !important;
+}
+
+#drupal-off-canvas .form-select:not([multiple]) {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 #drupal-off-canvas .form-select:not([multiple]) {
