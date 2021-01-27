@@ -425,7 +425,9 @@
   background-size: 25px;
   background-position: right 10px center;
   background-repeat: no-repeat;
-  appearance: none !important;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  appearance: none  !important;
 }
 
 #layout-builder-modal .form-select:not([multiple]) {
@@ -1411,7 +1413,9 @@
   background-size: 25px;
   background-position: right 10px center;
   background-repeat: no-repeat;
-  appearance: none !important;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  appearance: none  !important;
 }
 
 #drupal-off-canvas .form-select:not([multiple]) {
