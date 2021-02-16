@@ -374,6 +374,8 @@
 #layout-builder-modal form {
   color: #ffffff;
   font-family: inherit;
+  display: inline-block;
+  width: 100%;
 }
 
 #layout-builder-modal input[type="checkbox"] {
@@ -1469,6 +1471,8 @@
 #drupal-off-canvas form {
   color: #ffffff;
   font-family: inherit;
+  display: inline-block;
+  width: 100%;
 }
 
 #drupal-off-canvas input[type="checkbox"] {

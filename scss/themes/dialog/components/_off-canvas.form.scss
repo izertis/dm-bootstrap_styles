@@ -6,6 +6,8 @@
 form {
   color: $panel_text_color;
   font-family: inherit;
+  display: inline-block;
+  width: 100%;
 }
 
 input[type="checkbox"] {
