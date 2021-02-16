@@ -26,7 +26,7 @@ class Animation extends StylesGroupPluginBase {
     $form['animation'] = [
       '#type' => 'details',
       '#title' => $this->t('Animation'),
-      '#open' => TRUE,
+      '#open' => FALSE,
     ];
 
     return $form;
