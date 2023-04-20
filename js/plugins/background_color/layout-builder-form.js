@@ -10,7 +10,7 @@
   Drupal.behaviors.backgroundColorLayoutBuilderForm = {
     attach: function (context) {
 
-      $(".fieldgroup.field-background-color input:radio", context).once('blb_bg-color').each(function () {
+      $(once('blb_bg-color', '.fieldgroup.field-background-color input[type="radio"]', context)).each(function () {
         if($(this).val() != '_none') {
           $(this).next('label').addClass($(this).val());
 

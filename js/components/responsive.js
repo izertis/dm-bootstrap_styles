@@ -155,7 +155,7 @@
     attach: function (context) {
 
       // Listen to bs_responsive device click.
-      $("input.bs_responsive", context).once().on("click", function () {
+      $(once('click_once', 'input.bs_responsive', context)).on("click", function () {
         var currentDevice = $(this).val();
         // set it in the temp store.
         setTempStore('active_device', currentDevice);
@@ -163,7 +163,7 @@
       });
 
       // Close our previewer if the offcanvas menu is closed.
-      $(document, context).once().on('click', '.ui-dialog-titlebar-close', function () {
+      $(once('click_once', document, context)).on('click', '.ui-dialog-titlebar-close', function () {
         destroyPreviewer();
       });
 
@@ -204,7 +204,7 @@
     attach: function (context) {
 
       // Allows us to attach tooltips to radio option labels.
-      $("svg[data-bs-tooltip-label]", context).once('bs-svg-tooltips').each(function (e) {
+      $(once('bs-svg-tooltips', 'svg[data-bs-tooltip-label]', context)).each(function (e) {
         var placement = $(this).attr('data-bs-tooltip-placement') ? $(this).attr('data-bs-tooltip-placement') : 'top';
         var label = $(this).attr('data-bs-tooltip-label') ? $(this).attr('data-bs-tooltip-label') : '';
         $(this).after('<div class="bs_tooltip" data-placement="' + placement + '" role="tooltip">' + label + '</div>');

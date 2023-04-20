@@ -10,7 +10,7 @@
   Drupal.behaviors.textColorLayoutBuilderForm = {
     attach: function (context) {
 
-      $(".fieldgroup.field-text-color input:radio", context).once('blb_text-color').each(function () {
+      $(once('blb_text-color', '.fieldgroup.field-text-color input:radio', context)).each(function () {
         $(this).next('label').addClass($(this).val());
 
         // Attach the color as a background color to the label AFTER adding the class.

@@ -18,7 +18,7 @@
       }
 
       // Remove custom-control class from Barrio theme.
-      $(".bs_tab-pane--appearance input:radio", context).once('bs-themes-overrides').each(function () {
+      $(once('bs-themes-overrides', '.bs_tab-pane--appearance input[type="radio"]', context)).each(function () {
         $(this).parent().removeClass('custom-control custom-radio');
         $(this).removeClass('custom-control-input');
         $(this).next('label').removeClass('custom-control-label');
