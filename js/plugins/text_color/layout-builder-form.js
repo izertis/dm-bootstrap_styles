@@ -10,7 +10,7 @@
   Drupal.behaviors.textColorLayoutBuilderForm = {
     attach: function (context) {
 
-      $(once('blb_text-color', '.fieldgroup.field-text-color input:radio', context)).each(function () {
+      $(once('blb_text-color', '.fieldgroup.field-text-color input[type="radio"]', context)).each(function () {
         $(this).next('label').addClass($(this).val());
 
         // Attach the color as a background color to the label AFTER adding the class.
@@ -39,7 +39,7 @@
       });
 
       // Custom solution for bootstrap 3 & Bario drupal theme issues.
-      $(".fieldgroup.field-text-color .fieldset-wrapper input:radio", context).each(function () {
+      $('.fieldgroup.field-text-color .fieldset-wrapper input[type="radio"]', context).each(function () {
         $(this).closest('.radio').find('label').addClass($(this).val());
         var checked = $(this).prop("checked");
         if (typeof checked !== typeof undefined && checked !== false) {
